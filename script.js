@@ -1,3 +1,13 @@
+//Display current time and date in header and keep time with SetInterval 
+function displayTime() {
+    var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
+    $('#currentDay').text(rightNow);
+  }
+
+setInterval(displayTime, 1000);
+displayTime();
+
+//Create timeblocks for planner
 var timeBox = $('#container');
 
 var times = [
@@ -12,12 +22,12 @@ var times = [
     '17:00PM',
 ]; 
 
-var timeBlockEl = $('<form>');
-timeBox.append(timeBlockEl);
 
 for (var i = 0; i < times.length; i++) {
     var timeBlocks = $('<input>');
-    timeBlocks.text(times[i]);
+    var timeLabel = $('<label>');
+    timeLabel.text(times[i]);
     timeBlocks.addClass('time-block'); 
-    timeBox.append(timeBlockEl);
+    timeBox.append(timeBlocks);
 }
+

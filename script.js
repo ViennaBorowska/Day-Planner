@@ -12,7 +12,7 @@ var workHours = [
     {
         id: "0",
         time: "09",
-        hour: "09",
+        hour: "9",
         ampm: "am",
         savedNotes: ""
         
@@ -48,7 +48,7 @@ var workHours = [
     {
         id: "4",
         time: "13",
-        hour: "01",
+        hour: "1",
         ampm: "pm",
         savedNotes: ""
         
@@ -57,7 +57,7 @@ var workHours = [
     {
         id: "5",
         time: "14",
-        hour: "02",
+        hour: "2",
         ampm: "pm",
         savedNotes: ""
         
@@ -66,7 +66,7 @@ var workHours = [
     {
         id: "6",
         time: "15",
-        hour: "03",
+        hour: "3",
         ampm: "pm",
         savedNotes: ""
         
@@ -75,7 +75,7 @@ var workHours = [
     {
         id: "7",
         time: "16",
-        hour: "04",
+        hour: "4",
         ampm: "pm",
         savedNotes: ""
         
@@ -84,7 +84,7 @@ var workHours = [
     {
         id: "8",
         time: "17",
-        hour: "05",
+        hour: "5",
         ampm: "pm",
         savedNotes: ""
         
@@ -130,24 +130,24 @@ workHours.forEach(function(eachHour) {
 
 // LOCAL STORAGE SAVING, SETTING & GETTING
 
-    //SAVE
+    //SET
     function  saveNotesLocal() {
-        localStorage.setItem("workHours", JSON.stringify(workHours));
+        localStorage.setItem("workHours", JSON.stringify(workHours.savedNotes));
     }
 
-    //SET
+    //DISPLAY STORED DATA
     function displayNotes() {
-        workHours.forEach(function (_thisHour) {
-            $(_thisHour.id).val(_thisHour.savedNotes);
+        workHours.forEach(function (thisHour) {
+            $(thisHour.id).val(thisHour.savedNotes);
         })
     }
 
     //GET
     function getLocal() {
-        var localNotes = JSON.parse(localStorage.getItem("workHours"));
+        var localNotes = JSON.parse(localStorage.getItem("workHours.savedNotes"));
 
         if (localNotes) {
-            workHours = localNotes;
+            workHours.savedNotes = localNotes;
         }
 
         saveNotesLocal();
@@ -162,7 +162,7 @@ workHours.forEach(function(eachHour) {
         event.preventDefault();
 
         var saveInput = $(this).siblings(".description").children(".future").attr("id");
-        workHours[saveInput].savedNotes = $(this).siblings(".decription").children(".future").val();
+        workHours[saveInput].savedNotes = $(this).siblings(".decription").children(".future").val(workHours);
         console.log(saveInput);
 
         saveNotesLocal();

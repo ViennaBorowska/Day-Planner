@@ -127,46 +127,46 @@ workHours.forEach(function(eachHour) {
 })
 // LOCAL STORAGE SAVING, SETTING & GETTING
 
-    //SET
+    //GET TEXT DATA
     function  saveNotesLocal() {
-        workHours.forEach(function(workHour) {
-            localStorage.setItem(workHour, JSON.stringify(workHours[i].savedNotes))
+    var note = $(".description").children("textarea").val();
+
         }
-        )};
-    
-        //DISPLAY STORED DATA
+
+    //DISPLAY STORED DATA
     function displayNotes() {
         workHours.forEach(function (thisHour) {
             $(thisHour.id).val(thisHour.savedNotes);
         })
     }
-    //GET
-    function getLocal() {
-        for (i = 0; i > workHours.length; i++);
-        var localNotes = JSON.parse(localStorage.getItem("workHours[i]"));
-
-        if (localNotes) {
-            workHours.savedNotes = localNotes;
-        }
-
-        saveNotesLocal();
-        displayNotes();
-    
-    }
-    getLocal();
-
+   
     //SAVE BUTTON CLICK EVENT
-
+    var allNotes = [];
     $(".saveBtn").on("click", function(event){
         event.preventDefault();
 
+        // SETTING
         var saveInput = $(this).prev(".description").children("textarea").val();
-        workHours[saveInput].savedNotes = $(this).prev(".decription").children("textarea").val();
+        allNotes.push(saveInput);
+        localStorage.setItem("Userinput", allNotes);
+
+        // GETTING
+        function getLocal() {
+            var localNotes = JSON.parse(localStorage.getItem("Userinput"));
+            if (localNotes) {
+                workHours[i].savedNotes = localNotes;
+            }
+            saveNotesLocal();
+            displayNotes();
+            
+        }
+        getLocal();
+        
         console.log(saveInput);
 
-        saveNotesLocal();
-        displayNotes();
-    })
+        
+    });
+    getLocal();
 
 
 

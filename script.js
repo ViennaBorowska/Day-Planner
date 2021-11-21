@@ -11,15 +11,15 @@ displayTime();
 var timeBox = $('#container');
 
 var times = [
-    '09:00AM',
-    '10:00AM',
-    '11:00AM',
-    '12:00PM',
-    '13:00PM',
-    '14:00PM',
-    '15:00PM',
-    '16:00PM',
-    '17:00PM',
+    '09AM',
+    '10AM',
+    '11AM',
+    '12PM',
+    '1PM',
+    '2PM',
+    '3PM',
+    '4PM',
+    '5PM',
 ]; 
 
 

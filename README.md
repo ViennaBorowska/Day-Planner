@@ -20,7 +20,7 @@ Moment
 
 ## Users are presented with the current date and time, a blank 8-hour planner and save buttons for each hour segment:
 
-<img src="Screenshots/SS1.JPG">  
+<img src="Screenshots/SS1.jpg">  
 
 ## The coloured text area can be edited by the user:
 

@@ -9,9 +9,7 @@ https://viennaborowska.github.io/Day-Planner/
 HTML, CSS & JavaScript
 
 # APIs
-JQuery
-Bootstrap
-Moment
+JQuery - Bootstrap - Moment
 
 # DESCRIPTION
 ## This site uses HTML, CSS and JavaScript to build a workday planner. This site uses the Moment API library and LocalStorage to remember daily tasks and track the time.

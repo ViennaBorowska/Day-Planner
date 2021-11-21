@@ -150,25 +150,23 @@ workHours.forEach(function(eachHour) {
         allNotes.push(saveInput);
         localStorage.setItem("Userinput", allNotes);
 
-        // GETTING
-        function getLocal() {
-            var localNotes = JSON.parse(localStorage.getItem("Userinput"));
-            if (localNotes) {
-                workHours[i].savedNotes = localNotes;
-            }
-            saveNotesLocal();
-            displayNotes();
-            
-        }
-        getLocal();
-        
-        console.log(saveInput);
+        });   
 
-        
-    });
+    // GETTING
+    function getLocal() {
+        var localNotes = JSON.parse(localStorage.getItem("Userinput"));
+        if (localNotes) {
+            workHours[i].savedNotes = localNotes;
+        }
+        saveNotesLocal();
+        displayNotes();
+    }
     getLocal();
 
-
-
+// PSEUDOCODE TO FIX LOCAL STORAGE GETTING & SETTING
+//Create variable for time
+//Save time to local storage with corresponding time
+//Get local storage data
+//Loop through hours and link corresponding notes
 
     

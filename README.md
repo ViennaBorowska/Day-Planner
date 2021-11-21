@@ -18,7 +18,7 @@ Moment
 # DESCRIPTION
 ## This site uses HTML, CSS and JavaScript to build a workday planner. This site uses the Moment API library and LocalStorage to remember daily tasks and track the time.
 
-## Users are presented with the current date and time, a blank 8-hour planner and save buttons for each hour segment:
+## Users are presented with the current date and time, a blank 8-hour planner and save buttons for each hour segment. Hours are colour coded for past, present and future:
 
 <img src="Screenshots/SS1.jpg">  
 

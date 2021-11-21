@@ -22,13 +22,10 @@ Moment
 
 <img src="Screenshots/SS1.jpg">  
 
-## The coloured text area can be edited by the user:
+## The coloured text area can be edited by the user and saved to Local Storage for future use:
 
-<img src="Screenshots/SS2.JPG"> 
+<img src="Screenshots/SS2.jpg"> 
 
-## When the save button is clicked, the input is saved to localStorage:
-
-<img src="Screenshots/SS3.JPG"> 
 
 
 ## FILES

@@ -125,26 +125,25 @@ workHours.forEach(function(eachHour) {
         hourBlock.append(blockSpace, hourNotes, saveBtn);
         saveBtn.append(saveNotes);
 })
-
-    
-
 // LOCAL STORAGE SAVING, SETTING & GETTING
 
     //SET
     function  saveNotesLocal() {
-        localStorage.setItem("workHours", JSON.stringify(workHours.savedNotes));
-    }
-
-    //DISPLAY STORED DATA
+        workHours.forEach(function(workHour) {
+            localStorage.setItem(workHour, JSON.stringify(workHours[i].savedNotes))
+        }
+        )};
+    
+        //DISPLAY STORED DATA
     function displayNotes() {
         workHours.forEach(function (thisHour) {
             $(thisHour.id).val(thisHour.savedNotes);
         })
     }
-
     //GET
     function getLocal() {
-        var localNotes = JSON.parse(localStorage.getItem("workHours.savedNotes"));
+        for (i = 0; i > workHours.length; i++);
+        var localNotes = JSON.parse(localStorage.getItem("workHours[i]"));
 
         if (localNotes) {
             workHours.savedNotes = localNotes;
@@ -161,8 +160,8 @@ workHours.forEach(function(eachHour) {
     $(".saveBtn").on("click", function(event){
         event.preventDefault();
 
-        var saveInput = $(this).siblings(".description").children(".future").attr("id");
-        workHours[saveInput].savedNotes = $(this).siblings(".decription").children(".future").val(workHours);
+        var saveInput = $(this).prev(".description").children("textarea").val();
+        workHours[saveInput].savedNotes = $(this).prev(".decription").children("textarea").val();
         console.log(saveInput);
 
         saveNotesLocal();
